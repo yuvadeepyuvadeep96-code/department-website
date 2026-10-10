@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>Yuva Mobile Shop</title>
+
+<!-- CSS Styling -->
+<style>
+body {
+font-family: Arial, sans-sarif;
+margin:1.5;
+background-color:f0f4f8;
+}
+
+banner {
+background-color:142850;
+color: white;
+text-align: center;
+padding:25px;
+}
+
+nav {
+background-color:0077b6;
+padding:15px;
+text-align: center;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin: 15px;
+font-weight: bold;
+}
+
+nav a:hover {
+color: yellow;
+}
+
+welcome {
+text-align: center;
+padding: 20px;
+}
+
+products {
+display: grid; 
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+padding: 25px;
+}
+
+.mobile {
+background-color: white;
+text-align: center;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 4px 10px #cccccc;
+transition: 0.3s;
+}
+
+.mobile: hover {
+transform: scale(1.05);
+box-shadow: 0 8px 15px #999999;
+}
+
+.mobile img {
+width: 150px;
+height: 150px;
+object-fit: contain;
+}
+
+.price {
+color: green;
+font-size: 22px;
+font-weight: bold;
+}
+
+button {
+background-color: 0077b6;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: 142850;
+}
+
+contact {
+background-color: 142850;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+/* Mobile Responsive CSS */
+@media (max-width: 700px) {
+#products {
+grid-template-columns: 1fr;
+}
+
+nav a {
+display: inline-block;
+margin: 8px;
+}</head>
+
+}
+</style>
+</head>
+
+<body>
+
+<header id="banner">
+<h1>YUVi MOBILE SHOP</h1>
+<p>Your Trusted Mobile Store</p>
+</header>
+
+<nav>
+<a href="home">Home</a>
+<a href="products">Mobiles</a>
+<a href="contact">Contact</a>
+</nav>
+
+<section id="welcome">
+<h2 id="home">Welcome to Our Mobile Shop</h2>
+<p>Find your favourite smartphone at the best price!</p>
+</section>
+
+<section id="products">
+
+<div class="mobile">
+<img src="https://placehold.co/150x150?text=iPhone"
+ alt="iPhone">
+<h3>Apple iPhone</h3>
+<p>128GB Storage</p>
+<p class="price">₹59,999</p>
+<button onclick="buy('Apple iPhone')">Buy Now</button>
+</div>
+
+<div class="mobile">
+<img src="https://placehold.co/150x150?text=Samsung"
+alt="Samsung">
+<h3>Samsung Galaxy</h3>
+<p>256GB Storage</p>
+<p class="price">₹39,999</p>
+<button onclick="buy('Samsung Galaxy')">Buy Now</button>
+</div>
+
+<div class="mobile">
+<img src="https://placehold.co/150x150?text=Redmi"
+alt="Redmi">
+<h3>Redmi Smartphone</h3>
+<p>128GB Storage</p>
+<p class="price">₹14,999</p>
+<button onclick="buy('Redmi Smartphone')">Buy Now</button
+</div>
+
+</section>
+
+<footer id="contact">
+<h3>Contact Us</h3>
+<p>Yuvi Mobile Shop, UDUMALPET</p>
+<p>Email: yuvimobiles@example.com</p>
+<p>© 2026 Yuvi Mobile Shop</p>
+
+</footer>
+
+<script>
+function buy(product) {
+alert("You selected: " + product);
+}
+</script>
+
+</body>
+</html>
+```
