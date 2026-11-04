@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Result Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .heading {
+            color: #ffffff;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #c5c8ff;
+            margin-bottom: 30px;
+        }
+
+        .form {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px #00000050;
+        }
+
+        h2 {
+            text-align: center;
+            color: #543c9e;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #a855f7;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(90deg, #9333ea, #ec4899);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+            line-height: 2;
+            color: #333;
+        }
+
+        .footer {
+            color: #ddd;
+            margin-top: 25px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="heading">📚 College Result Portal</h1>
+    <p class="subtitle">Welcome to Student Examination Results</p>
+
+    <div class="form">
+
+        <h2>Student Login</h2>
+
+        <p class="description">
+            Enter your register number to view your result.
+        </p>
+
+        <form onsubmit="search(event)">
+
+            <label for="regno">Register Number</label>
+
+            <input
+                type="text"
+                id="regno"
+                placeholder="Enter Register Number"
+                required
+            >
+
+            <button type="submit">Check Result</button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+    <p class="footer">
+        © 2026 College Portal | All Rights Reserved
+    </p>
+
+    <script>
+
+        let data = {
+            "MCA037": {
+                name: "YUVADEEP S",
+                mark: 76
+            },
+
+            "MCA028": {
+                name: "SARVESH S",
+                mark: 86
+            },
+
+            "MCA103": {
+                name: "RAJESH",
+                mark: 86
+            }
+        };
+
+        function search(event) {
+
+            event.preventDefault();
+
+            let roll = document.getElementById("regno").value.trim().toUpperCase();
+
+            let result = document.getElementById("result");
+
+            if (data[roll]) {
+
+                let student = data[roll];
+
+                let status = student.mark >= 40 ? "PASS" : "FAIL";
+
+                result.innerHTML = `
+                    <h3>Result Details</h3>
+                    <p><b>Name:</b> ${student.name}</p>
+                    <p><b>Register No:</b> ${roll}</p>
+                    <p><b>Marks:</b> ${student.mark}</p>
+                    <p><b>Status:</b> ${status}</p>
+                `;
+
+            } else {
+
+                result.innerHTML = `
+                    <h3 style="color:red;">Invalid Register Number!</h3>
+                `;
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
